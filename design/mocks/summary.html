@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>モック③ 終了サマリー</title>
+    <link rel="stylesheet" href="mocks.css" />
+  </head>
+  <body>
+    <div class="mock-frame">
+      <nav class="nav-mocks">
+        <a href="index.html">一覧</a>
+        <a href="preset-select.html">① 課題選択</a>
+        <a href="session.html">② 練習中</a>
+        <a href="summary.html">③ サマリー</a>
+      </nav>
+      <span class="mock-label">Screen 03 · Summary</span>
+      <div class="screen">
+        <div class="top-bar">
+          <div class="brand"><span class="brand-dot"></span> リズムレーン</div>
+          <div class="note-pill">かんたんな点数は小さく。見るのは「かたち」と「ことば」。</div>
+        </div>
+
+        <h2 style="margin: 0 0 14px; font-size: 20px">おつかれさま！ きょうのけっか</h2>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <h3>ズレのばらつき（例）</h3>
+            <div class="bars">
+              <div class="bar early"><span>早い</span></div>
+              <div class="bar ok"><span>OK</span></div>
+              <div class="bar late"><span>おくれ</span></div>
+            </div>
+            <p class="quote">だいたい合ってるけど、<span style="color: var(--early)">ちょい早い</span>が多めかも</p>
+            <p class="subquote">根拠：全体の分布で、拍の少し前に印が寄りがちでした。</p>
+            <ul class="bullet-list">
+              <li>典型：小節のはじめで“なおしすぎ”っぽい前出し</li>
+              <li>次のいちげん：OKゾーンを「ふつう」にしてもういちど</li>
+            </ul>
+          </div>
+          <div class="summary-card">
+            <h3>きょうのかたち（楽しさ）</h3>
+            <div class="shape-art">
+              <div class="shape-trail"></div>
+            </div>
+            <p class="subquote" style="margin-top: 12px">
+              分布から自動で描く“きょうだけのライン”。同じ演奏でも色や模様が少し変わる想定。
+            </p>
+          </div>
+        </div>
+
+        <div class="big-actions" style="margin-top: 18px">
+          <button type="button" class="btn btn-primary">もういちど</button>
+          <button type="button" class="btn btn-secondary">べつの課題</button>
+        </div>
+        <p class="footer-hint">スコア表示は任意・小さめ（MVPでは主役にしない）</p>
+      </div>
+    </div>
+  </body>
+</html>

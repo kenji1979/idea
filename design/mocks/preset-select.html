@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>モック① 課題選択</title>
+    <link rel="stylesheet" href="mocks.css" />
+  </head>
+  <body>
+    <div class="mock-frame">
+      <nav class="nav-mocks">
+        <a href="index.html">一覧</a>
+        <a href="preset-select.html">① 課題選択</a>
+        <a href="session.html">② 練習中</a>
+        <a href="summary.html">③ サマリー</a>
+      </nav>
+      <span class="mock-label">Screen 01 · Presets</span>
+      <div class="screen">
+        <div class="top-bar">
+          <div class="brand"><span class="brand-dot"></span> リズムレーン</div>
+          <div class="note-pill">
+            HHの開閉トレーニングは対象外（機器都合）。HHを使う課題は「刻みのタイミング」のみ。
+          </div>
+        </div>
+
+        <h2 style="margin: 0 0 12px; font-size: 20px">きょうのれんしゅう</h2>
+        <div class="preset-grid">
+          <div class="preset-card selected">
+            <span class="preset-tag">おすすめ</span>
+            <div class="preset-title">8ビート：キック＋スネア</div>
+            <div class="preset-desc">1・3拍キック、2・4拍スネア。いちばんなじみの形でズレの癖を見る。</div>
+          </div>
+          <div class="preset-card">
+            <span class="preset-tag">観察</span>
+            <div class="preset-title">拍の頭チェック</div>
+            <div class="preset-desc">キック中心。小節のはじめで前に出す／直しすぎに注目。</div>
+          </div>
+          <div class="preset-card">
+            <span class="preset-tag">刻み</span>
+            <div class="preset-title">ハイハット八分（単色）</div>
+            <div class="preset-desc">開閉は使わない。同じ音色のまま、ならした八分のムラを見る。</div>
+          </div>
+          <div class="preset-card">
+            <span class="preset-tag warn">むずかしめ</span>
+            <div class="preset-title">オフビート・スネア</div>
+            <div class="preset-desc">裏にスネア。キープが試される。メトロノームはそのまま。</div>
+          </div>
+          <div class="preset-card disabled">
+            <span class="preset-tag warn">いまはなし</span>
+            <div class="preset-title">HH オープン／クローズ</div>
+            <div class="preset-desc">機器の開閉が故障中のため、この課題は表示しない／選択不可。</div>
+          </div>
+        </div>
+
+        <div class="tempo-row">
+          <div>
+            <div class="tempo-label">テンポ</div>
+            <div class="tempo-value">92</div>
+          </div>
+          <div class="tempo-slider" aria-hidden="true"></div>
+        </div>
+
+        <div class="big-actions">
+          <button type="button" class="btn btn-primary">はじめる</button>
+          <button type="button" class="btn btn-secondary">せってい</button>
+        </div>
+        <p class="footer-hint">「せってい」は親向け：MIDIノート割当・OKゾーン幅など</p>
+      </div>
+    </div>
+  </body>
+</html>

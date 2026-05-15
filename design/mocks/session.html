@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>モック② 練習中</title>
+    <link rel="stylesheet" href="mocks.css" />
+  </head>
+  <body>
+    <div class="mock-frame">
+      <nav class="nav-mocks">
+        <a href="index.html">一覧</a>
+        <a href="preset-select.html">① 課題選択</a>
+        <a href="session.html">② 練習中</a>
+        <a href="summary.html">③ サマリー</a>
+      </nav>
+      <span class="mock-label">Screen 02 · Session lane</span>
+      <div class="screen">
+        <div class="top-bar">
+          <div class="brand"><span class="brand-dot"></span> リズムレーン</div>
+          <div class="note-pill">課題：8ビート（キック＋スネア） · 開閉トレーニングなし</div>
+        </div>
+
+        <div class="session-hud">
+          <div class="hud-block">
+            <h3>のこりじかん</h3>
+            <div class="big">1:04</div>
+          </div>
+          <div class="hud-block">
+            <h3>テンポ</h3>
+            <div class="big">92</div>
+          </div>
+          <div class="hud-block" style="text-align: right">
+            <h3>かんばん（いつも表示）</h3>
+            <div class="legend">
+              <span><i class="swatch early"></i> ちょい早い</span>
+              <span><i class="swatch ok"></i> OK</span>
+              <span><i class="swatch late"></i> ちょいおくれ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="session-main">
+          <div class="lane-wrap">
+            <div class="lane-grid"></div>
+            <div class="center-line" aria-hidden="true"></div>
+            <div class="pulse-ring"></div>
+            <div class="beat-stream" aria-hidden="true">
+              <!-- Beat dots (decorative positions for mock) -->
+              <span class="beat" style="left: 22%"></span>
+              <span class="beat" style="left: 34%"></span>
+              <span class="beat" style="left: 46%"></span>
+              <span class="beat" style="left: 58%"></span>
+              <span class="beat" style="left: 70%"></span>
+              <span class="hit-mark early" aria-label="mock early"></span>
+              <span class="hit-mark ok" aria-label="mock ok"></span>
+              <span class="hit-mark late" aria-label="mock late"></span>
+            </div>
+          </div>
+          <div class="pad-hint">
+            <span class="pad-chip">キック：ON</span>
+            <span class="pad-chip">スネア：ON</span>
+            <span class="pad-chip">HH：この課題では OFF</span>
+          </div>
+        </div>
+
+        <div class="big-actions">
+          <button type="button" class="btn btn-secondary">とめる</button>
+          <button type="button" class="btn btn-primary" style="opacity: 0.55">れんしゅうちゅう…</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
