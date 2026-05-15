@@ -17,11 +17,18 @@ npm run dev
 
 表示された URL（通常 `http://localhost:5173`）をブラウザで開き、MIDIアクセスを許可してから **はじめる** を押してください。
 
+### Git 取得後の手順（PC / iPad 別）
+
+ZIP や `git clone` したあとからの具体的な流れは、次のドキュメントにまとめています。
+
+- **[docs/getting-started-pc-ipad.md](./docs/getting-started-pc-ipad.md)** — PC での利用（推奨）、iPad での利用（同一 LAN から PC に接続する方法／単体利用の注意）
+
 ## スクリプト
 
 | コマンド | 説明 |
 |----------|------|
-| `npm run dev` | 開発サーバー |
+| `npm run dev` | 開発サーバー（localhost） |
+| `npm run dev:lan` | 開発サーバー（LAN 公開・iPad からアクセスしやすい） |
 | `npm run build` | 本番用 `dist/` を生成 |
 | `npm run preview` | ビルド結果のプレビュー |
 | `npm test` | Vitest ユニットテスト |
