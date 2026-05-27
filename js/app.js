@@ -255,6 +255,39 @@
   showDegrees.addEventListener("change", renderFretboard);
   showAllNotes.addEventListener("change", renderFretboard);
 
+  /**
+   * 練習メニューから指板の表示を合わせる（存在しない値は無視）
+   * @param {{ root?: string, scale?: string, showDegrees?: boolean, showAllNotes?: boolean }} opts
+   */
+  function applyFretboardSettings(opts) {
+    if (!opts || typeof opts !== "object") return;
+    if (opts.root && NOTE_NAMES.indexOf(opts.root) !== -1) {
+      rootSelect.value = opts.root;
+    }
+    if (opts.scale && SCALES[opts.scale]) {
+      scaleSelect.value = opts.scale;
+    }
+    if (typeof opts.showDegrees === "boolean") {
+      showDegrees.checked = opts.showDegrees;
+    }
+    if (typeof opts.showAllNotes === "boolean") {
+      showAllNotes.checked = opts.showAllNotes;
+    }
+    renderFretboard();
+  }
+
+  window.BassLab = {
+    applyFretboardSettings,
+    scrollToFretboard() {
+      var el = document.getElementById("fret-title");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    scrollToControls() {
+      var el = document.getElementById("controls-title");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+  };
+
   initSelects();
   renderFretboard();
 })();

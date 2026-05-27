@@ -385,3 +385,181 @@ main.wrap {
     grid-template-columns: 44px repeat(13, 34px);
   }
 }
+
+/* ----- Header nav + practice book ----- */
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.88rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.practice-lead {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+.practice-howto {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.practice-subhead {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.practice-howto ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text);
+}
+
+.practice-howto li {
+  margin-bottom: 0.35rem;
+}
+
+.practice-weeks-root {
+  margin-top: 1.25rem;
+}
+
+.week-block {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.week-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.week-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.week-summary {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.week-days {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.day-plan {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.day-summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.65rem 0.85rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.day-summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-summary::before {
+  content: "▸";
+  font-size: 0.75rem;
+  color: var(--accent);
+  transition: transform 0.15s ease;
+}
+
+.day-plan[open] .day-summary::before {
+  transform: rotate(90deg);
+}
+
+.day-body {
+  padding: 0 0.85rem 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.day-goal {
+  margin: 0.75rem 0 0.5rem;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.day-steps {
+  margin: 0 0 0.75rem;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.day-steps li {
+  margin-bottom: 0.35rem;
+}
+
+.day-actions {
+  margin-top: 0.5rem;
+}
+
+.btn-lesson {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-lesson:hover {
+  background: rgba(94, 184, 232, 0.28);
+}
+
+.btn-lesson:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.day-actions-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
