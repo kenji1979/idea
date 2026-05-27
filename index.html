@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ベース初心者向け。8週間の毎日練習メニュー、指板の読み方、主要な音階を視覚的に学べます。" />
+  <title>ベース指板・音階ラボ | 初心者向け</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="header-brand">
+        <h1 class="logo">ベース指板・音階ラボ</h1>
+        <p class="tagline">指板とスケールを、目で追いながら身につける</p>
+      </div>
+      <nav class="site-nav" aria-label="ページ内ナビ">
+        <a href="#intro">はじめに</a>
+        <a href="#practice-daily">毎日の練習</a>
+        <a href="#controls-title">指板の設定</a>
+        <a href="#fret-title">指板</a>
+        <a href="#theory-title">用語とコツ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero card" id="intro" aria-labelledby="hero-title">
+      <h2 id="hero-title">はじめに</h2>
+      <p>
+        4弦ベースの標準チューニング（<strong>下から E・A・D・G</strong>）を前提に、
+        フレットごとの音名と、よく使う音階を指板上に色分けして表示します。
+        セルをクリックすると<strong>簡易的な音</strong>が鳴ります（音量に注意してください）。
+      </p>
+    </section>
+
+
+    <section class="practice-book card" id="practice-daily" aria-labelledby="practice-title">
+      <h2 id="practice-title">毎日の練習メニュー（8週間・独学教則）</h2>
+      <p class="practice-lead">
+        ここは<strong>紙の教本の代わり</strong>になることを目指したプログラムです。1日おおよそ<strong>30〜45分</strong>を目安に、
+        準備運動から指板の確認、右手左手のイメージ、振り返りまでを<strong>その日の順番どおり</strong>に進めてください。
+        ベースが手元にない日は、指板ツールと譜読み・耳だけの項目に置き換えて構いません。
+      </p>
+      <div class="practice-howto">
+        <h3 class="practice-subhead">教本として使うときの約束</h3>
+        <ul>
+          <li><strong>毎回最初にチューニング</strong>（実機がある日）。合わないまま練習しない。</li>
+          <li><strong>痛みが出たら中止</strong>。無理なストレッチや長時間は避け、必要なら医療・指導者へ。</li>
+          <li><strong>メトロノーム</strong>はスマートフォンアプリで可。テンポは「正確さが続く速さ」から始める。</li>
+          <li>「指板に反映」ボタンがある日は、下の<strong>指板の設定</strong>と<strong>指板</strong>へスクロールしてから練習する。</li>
+        </ul>
+      </div>
+      <div id="practice-weeks-root" class="practice-weeks-root" aria-live="polite"></div>
+    </section>
+
+    <section class="controls card" aria-labelledby="controls-title">
+      <h2 id="controls-title">指板の設定</h2>
+      <div class="control-row">
+        <label for="root-select">ルート音（主音）</label>
+        <select id="root-select" aria-describedby="root-hint"></select>
+        <span id="root-hint" class="hint">スケールの「ド」にあたる音です。</span>
+      </div>
+      <div class="control-row">
+        <label for="scale-select">音階（スケール）</label>
+        <select id="scale-select" aria-describedby="scale-hint"></select>
+        <span id="scale-hint" class="hint">パターンが指板に重なります。</span>
+      </div>
+      <div class="control-row toggles">
+        <label class="check">
+          <input type="checkbox" id="show-degrees" checked />
+          <span>度数ラベル（1・2・3…）を表示</span>
+        </label>
+        <label class="check">
+          <input type="checkbox" id="show-all-notes" />
+          <span>スケール外の音名も常に表示</span>
+        </label>
+      </div>
+      <button type="button" id="clear-selection" class="btn-secondary">選択の解除</button>
+    </section>
+
+    <section class="fretboard-section card" aria-labelledby="fret-title">
+      <h2 id="fret-title">指板</h2>
+      <p class="fret-legend">
+        上の行が<strong>1弦（G）</strong>、下が<strong>4弦（E）</strong>です。左端が<strong>オープン（0フレット）</strong>、右に行くほど音が半音ずつ上がります。
+      </p>
+      <div id="fretboard" class="fretboard" role="grid" aria-label="ベース指板。行が弦、列がフレット"></div>
+      <div id="degree-legend" class="degree-legend" aria-hidden="true"></div>
+    </section>
+
+    <section class="theory card" aria-labelledby="theory-title">
+      <h2 id="theory-title">用語とコツ</h2>
+      <div class="accordion">
+        <details open>
+          <summary>指板の読み方</summary>
+          <p>
+            各マスは「弦」と「フレット」の交点です。オープンは弦を押さえない状態の音です。
+            1フレット進むと<strong>半音</strong>、2フレットで<strong>全音</strong>上がります。
+            同じ音名は12フレット（オクターブ）ごとに繰り返し現れます。
+          </p>
+        </details>
+        <details>
+          <summary>音階（スケール）とは</summary>
+          <p>
+            ルート音を起点に、決まった<strong>間隔</strong>で並んだ音の集まりです。
+            メジャーは明るい印象、マイナーは落ち着いた印象になりやすい、と覚えて大丈夫です。
+            まずは<strong>マイナー・ペンタトニック</strong>と<strong>メジャー・ペンタトニック</strong>の形を覚えると応用しやすいです。
+          </p>
+        </details>
+        <details>
+          <summary>練習のすすめ</summary>
+          <ul>
+            <li>ルート音だけを探す練習から始め、次に3度・5度を探します。</li>
+            <li>同じスケールを、別のルートで表示して<strong>形の移動</strong>に慣れましょう。</li>
+            <li>実際の演奏では、指の運びやミュートも大切です。本サイトは<strong>音の地図</strong>として使ってください。</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        学習用の静的サイトです。練習メニューは<strong>独学用の目安</strong>です。
+        姿勢・奏法の個別指導が必要なときは、現場の先生や信頼できる教本と併用してください。
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/practice-menu.js"></script>
+</body>
+</html>
